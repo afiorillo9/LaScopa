@@ -26,7 +26,7 @@ public class Index extends HttpServlet implements Servlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("test", false);
+		
 		
 		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/index.jsp");
 		dispatcher.forward(request, response);

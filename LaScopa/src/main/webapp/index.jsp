@@ -1,32 +1,49 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" import="java.util.*"%>
 
 <%
-	Boolean test = (Boolean) request.getAttribute("test");
+	String role = (String) session.getAttribute("ruolo");
 	
-	if(test == null) {
-		response.sendRedirect("Index");
-		return;
+	if(role != null) {
+		if(role.equals("gestore")) {
+			response.sendRedirect(request.getContextPath() + "/gestore/index.jsp");
+			return;
+		} 
+		
+		if(role.equals("giocatore")) {
+			response.sendRedirect(request.getContextPath() + "/giocatore/index.jsp");
+			return;
+		}
 	}
-
 %>
 
 <!DOCTYPE html>
-<html>
+<html lang="it">
 	<head>
-		<meta charset="ISO-8859-1">
+        <meta charset="utf-8" name="Simone" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <link href="css/styles.css" rel="stylesheet" />        
+        <link rel="icon" type="image/x-icon" href="img/logo.ico" />
+        
 		<title>LaScopa</title>
 	</head>
 	<body>
-		<%
-			if(test == true){
-		%>
-			<p>Hello World</p>
-		<%
-			} else {
-		%>
-			<p>Non funziona</p>
-		<%
-			} 
-		%>
+		<%@ include file="menu.jsp"%>
+        
+        <br />
+        
+        <section>
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-6 div-presentazione">
+                        <h1 class="mt-5">Benvenuto!</h1>
+                        <p>Ti presentiamo il gioco della scopa versione web</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Javascript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/scripts.js"></script>
 	</body>
 </html>

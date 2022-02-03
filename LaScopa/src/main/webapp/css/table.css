@@ -1,0 +1,99 @@
+@charset "ISO-8859-1";
+
+.table {
+	width: 100%;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	display: table;
+}
+
+.articleTable {
+	width: 100%;
+}
+
+.groupTable {
+	display: table-row-group; 
+}
+
+.rowTable {
+	display: table-row;
+	text-align: left;
+	background: #f6f6f6;
+}
+
+.rowTable:nth-of-type(odd) {
+	background: #e9e9e9;
+}
+
+.rowTable.header {
+	font-weight: 900;
+	color: #ffffff;
+	background: #ED0101;
+}
+
+.cellTable {
+	padding: 4px;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.cellTable-not-found {
+	display: table-caption;
+	caption-side: bottom;
+	background: #f6f6f6;
+	padding: 2px 2px;
+	text-align: center;
+}
+
+.titleTable-list {
+	font-weight: bold;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+#disclaimer {
+	font-size: 12px;
+	text-align: justify;
+}
+
+@media (max-width: 967px) {
+	.rowTable {
+		padding: 14px 0 7px;
+	  	display: block;
+	}
+	
+	.rowTable.header {
+	  	padding: 0;
+	  	height: 6px;
+	}
+	
+	.rowTable.header .cell {
+	  	isplay: none;
+	}
+	
+	.rowTable .cell {
+	  	margin-bottom: 10px;
+	}
+	.rowTable .cell:before {
+		margin-bottom: 3px;
+		content: attr(data-title);
+		min-width: 98px;
+		font-size: 10px;
+		line-height: 10px;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: #969696;
+		display: block;
+	}
+	
+	.cellTable {
+		padding: 5px 16px;
+		display: block;
+	}
+	
+	.btnRemove {
+		margin: 10px;
+	}
+}
