@@ -5,7 +5,7 @@ drop user if exists 'scopa'@'%';
 create user 'admin'@'%' identified by 'admin';
 
 create table account_(
-id					int not null auto_increment,
+id				int not null auto_increment,
 username 			varchar(50) unique,
 psw 				varchar(15),
 attivo 				boolean,
@@ -31,10 +31,10 @@ foreign key (id_account) references account_(id) on delete cascade
 create table partita_(
 id_partita 			int not null auto_increment,
 data_ 				date,
-giocatore_uno		varchar(30),
-giocatore_due 		varchar(30),
-punteggio_uno 		int default null,
-punteggio_due 		int default null,
+giocatore_uno			varchar(30),
+giocatore_due 			varchar(30),
+punteggio_uno 			int default null,
+punteggio_due 			int default null,
 vincitore 			varchar(30) default null,
 primary key (id_partita),
 foreign key (giocatore_uno) references giocatore_(nickname) on delete cascade,
@@ -42,13 +42,13 @@ foreign key (giocatore_due) references giocatore_(nickname) on delete cascade
 );
 
 create table punteggio_(
-id_punteggio		int not null auto_increment,
+id_punteggio			int not null auto_increment,
 id_partita			int,
 giocatore			varchar(30),
 scope				int default 0,
-carte_lunghe		int default 0,
-sette_denari		int default 0,
-carte_denari		int default 0,
+carte_lunghe			int default 0,
+sette_denari			int default 0,
+carte_denari			int default 0,
 settanta			int default 0,
 totale				int default 0,
 primary key (id_punteggio),
@@ -58,7 +58,7 @@ foreign key (giocatore) references giocatore_(nickname) on delete cascade
 
 delimiter $$
 create procedure scopa.insertGiocatore( in _username varchar(50),
-										in _password varchar(15),
+					in _password varchar(15),
                                         in _nickname varchar(30),
                                         in _avatar_path varchar(50))
 begin
@@ -81,7 +81,7 @@ delimiter ;
 
 delimiter $$
 create procedure scopa.insertGestoreUtenti( in _username varchar(50),
-											in _password varchar(15),
+					    in _password varchar(15),
                                             in _nickname varchar(30),
                                             in _nome varchar(30),
                                             in _cognome varchar(30))
@@ -104,7 +104,7 @@ delimiter ;
 
 delimiter $$
 create procedure scopa.insertPartita(   in _giocatore_uno varchar(30),
-										in _giocatore_due varchar(30),
+					in _giocatore_due varchar(30),
                                         in _data date,
                                         in _vincitore varchar(30))
 begin
@@ -127,7 +127,7 @@ delimiter ;
 
 delimiter $$
 create procedure scopa.insertPunteggio( in _id_partita int,
-										in _giocatore varchar(30), 
+					in _giocatore varchar(30), 
                                         in _scope int, 
                                         in _carte_lunghe int, 
                                         in _sette_denari int, 
