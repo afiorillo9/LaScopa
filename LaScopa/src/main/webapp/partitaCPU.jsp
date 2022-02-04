@@ -27,20 +27,7 @@
 		<title>LaScopa</title>
 	</head>
 	<body>
-		<%@ include file="menu.jsp"%>
-        
-        <br />
-        
-        <section>
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5">
-                    <div class="col-lg-6 div-presentazione">
-                        <h1 class="mt-5">Benvenuto!</h1>
-                        <p>Ti presentiamo il gioco della scopa versione web</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+		<%@ include file="menu-gioco.jsp"%>
         
         <br />
         
@@ -48,21 +35,7 @@
             <div class="container px-5 px-lg-5">
                 <div class="row gx-5 gx-lg-5">
                     <div class="col-lg-12 div-presentazione">
-                        <h3 class="mt-5">La storia</h3>
-                        <p>Bla bla bla.</p>
-       			 	</div>
-                </div>
-            </div>
-        </section>
-        
-        <br />
-        
-        <section>
-            <div class="container px-5 px-lg-5">
-                <div class="row gx-5 gx-lg-5">
-                    <div class="col-lg-12 div-presentazione">
-                        <h3 class="mt-5">Cosa puoi fare ora?</h3>
-                        <p>Bla bla bla.</p>
+                    	
        			 	</div>
                 </div>
             </div>
