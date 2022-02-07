@@ -14,4 +14,14 @@
     <servlet-name>Index</servlet-name>
     <url-pattern>/Index</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Registra</display-name>
+    <servlet-name>Registra</servlet-name>
+    <servlet-class>it.unisa.lascopa.controller.Registra</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Registra</servlet-name>
+    <url-pattern>/Registra</url-pattern>
+  </servlet-mapping>
 </web-app>

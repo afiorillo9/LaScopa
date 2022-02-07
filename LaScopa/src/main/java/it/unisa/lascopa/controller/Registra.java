@@ -1,25 +1,23 @@
 package it.unisa.lascopa.controller;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.Servlet;
-import jakarta.servlet.http.HttpServlet;
-
 import java.io.IOException;
 
 /**
- * Servlet implementation class Index
+ * Servlet implementation class Registra
  * @author simon
  */
-public class Index extends HttpServlet implements Servlet {
+public class Registra extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
-    public Index() {
+    public Registra() {
+        super();
         // TODO Auto-generated constructor stub
     }
 
@@ -27,10 +25,8 @@ public class Index extends HttpServlet implements Servlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/index.jsp");
-		dispatcher.forward(request, response);
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
