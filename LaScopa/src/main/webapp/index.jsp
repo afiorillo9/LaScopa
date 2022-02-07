@@ -48,7 +48,7 @@
             <div class="container px-5 px-lg-5">
                 <div class="row gx-5 gx-lg-5">
                     <div class="col-lg-12 div-presentazione">
-                        <h3 class="mt-5">La storia bla bla</h3>
+                        <h3 class="mt-5">La storia</h3>
                         <p>Bla bla bla.</p>
        			 	</div>
                 </div>
