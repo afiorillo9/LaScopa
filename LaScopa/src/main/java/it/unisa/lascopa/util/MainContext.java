@@ -15,67 +15,45 @@ import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.annotation.WebListener;
 
 /**
- * 1
+ * 
  * @author fiorillo
  *
  */
 @WebListener
-public class MainContext implements ServletContextListener {
-
-	
+public class MainContext implements ServletContextListener {	
 	public void contextInitialized(ServletContextEvent sce) {
 		Utility.print("Startup web application");
 		
-		ServletContext context = sce.getServletContext();
-		
+		ServletContext context = sce.getServletContext();		
 		DataSource ds = null;
 		
-		try {
-			
+		try {			
 			Context initCtx = new InitialContext();
-
 			Context emvCtx = (Context) initCtx.lookup("java:comp/env");
 
-			ds = (DataSource) emvCtx.lookup("jdbc/lascopa");
+			ds = (DataSource) emvCtx.lookup("jdbc/LaScopa");
 			
 			Connection con = null;
 			
-			try {
-				
+			try {				
 				con = ds.getConnection();
 				
-				DatabaseMetaData metadata = con.getMetaData();
+				DatabaseMetaData metadata = con.getMetaData();				
 				
-				Utility.print("DBMS name : " + metadata.getDatabaseProductName());
-				
-				Utility.print("DBMS version : " + metadata.getDatabaseProductVersion());
-
-			
-			} catch(SQLException e) {
-				
-				Utility.print(this,e);
-				
-			} finally {
-				
-				if(con != null)
-					
-					try {
-						
-						con.close();
-						
+				Utility.print("DBMS name : " + metadata.getDatabaseProductName());				
+				Utility.print("DBMS version : " + metadata.getDatabaseProductVersion());			
+			} catch(SQLException e) {				
+				Utility.print(this,e);				
+			} finally {				
+				if(con != null)					
+					try {						
+						con.close();						
 					} catch (SQLException e) {
-						
-						e.printStackTrace();
-						
+						e.printStackTrace();						
 					}
 			}
-			
-			
-		
-		} catch(NamingException e) {
-			
-			Utility.print(this,e);
-			
+		} catch(NamingException e) {			
+			Utility.print(this,e);			
 		}
 		
 		context.setAttribute("Datasource", ds);
@@ -83,13 +61,11 @@ public class MainContext implements ServletContextListener {
 		Utility.print("DataSource creation : " + ds.toString() );
 	}
 	
-	public void contextDestroyed(ServletContextEvent sce) {
-		
+	public void contextDestroyed(ServletContextEvent sce) {		
 		ServletContext context = sce.getServletContext();
 		
 		context.removeAttribute("DataSource");
 		
-		Utility.print("Shutdown web application");
-		
+		Utility.print("Shutdown web application");		
 	}
 }

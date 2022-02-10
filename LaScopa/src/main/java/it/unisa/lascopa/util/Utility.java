@@ -3,10 +3,9 @@ package it.unisa.lascopa.util;
 /**
  * 
  * @author fiorillo
- *Utility permette di centralizzare i messaggidi controllo in questa versione stampa semplicemente a console ma è possibile cambiare la destinazione come un file di log ad esempio
+ * Utility permette di centralizzare i messaggidi controllo in questa versione stampa semplicemente a console ma è possibile cambiare la destinazione come un file di log ad esempio
  */
 public class Utility {
-
 	/**
 	 * 
 	 * @param messages

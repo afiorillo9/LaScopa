@@ -1,6 +1,7 @@
-drop database if exists laScopa;
-create database laScopa;
-use scopa;
+drop database if exists LaScopa;
+create database LaScopa;
+use LaScopa;
+
 drop user if exists 'admin'@'%';
 create user 'admin'@'%' identified by 'admin';
 

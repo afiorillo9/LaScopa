@@ -27,7 +27,7 @@
   
    <resource-ref>
   <description>JNDI reference to a data source</description>
-  <res-ref-name>jdbc/lascopa</res-ref-name>
+  <res-ref-name>jdbc/LaScopa</res-ref-name>
   <res-type>javax.sql.DataSource</res-type>
   <res-auth>Container</res-auth>
   </resource-ref>
