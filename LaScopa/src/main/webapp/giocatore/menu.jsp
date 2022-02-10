@@ -8,7 +8,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="#!"><%=nickname%></a></li>
+                <li class="nav-item"><a class="nav-link" href="#!"><%=/*nickname*/%></a></li>
                 <li class="nav-item"><a class="nav-link" href="#!">Partita VS CPU</a></li>
             </ul>
         </div>
