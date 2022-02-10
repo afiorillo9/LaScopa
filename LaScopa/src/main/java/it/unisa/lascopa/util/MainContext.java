@@ -14,6 +14,11 @@ import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.annotation.WebListener;
 
+/**
+ * 
+ * @author fiorillo
+ *
+ */
 @WebListener
 public class MainContext implements ServletContextListener {
 
